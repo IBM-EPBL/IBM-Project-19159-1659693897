@@ -1,0 +1,109 @@
+<html>
+  <head>
+  </head>
+  <body>
+{% extends "layout1.html" %}
+
+{% block content %}
+
+
+
+
+
+<h1>Registration page</h1>
+<form class="form-horizontal" action="{{url_for('register')}}" method="POST">
+
+<div class="form-group">
+	<label class="control-label col-sm-2" for="pwd">Name:</label>
+	<div class="col-sm-6">
+  		<input type="text" class="form-control" id ="name" name="name" placehloder="Enter Name" required>
+    </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-sm-2" for="pwd">Email:</label>
+  <div class="col-sm-6">
+  	<input type="email" class="form-control" id ="email" name="email" placehloder="Enter Email" required>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="control-label col-sm-2" for="pwd">Phno:</label>
+  <div class="col-sm-6">
+      <input type="text" class="form-control" id ="phno" name="phno" placehloder="Enter Phno" required>
+    </div>
+</div>
+
+
+<div class="form-group">
+  <label class="control-label col-sm-2" for="pwd">Blood Group:</label>
+  <div class="col-sm-6">
+  	<select class="form-control" id="blood_group" name="blood_group">
+  		<option value="A+">A+</option>
+  		<option value="A-">A-</option>
+  		<option value="B+">B+</option>
+  		<option value="B-">B-</option>
+  		<option value="AB+">AB+</option>
+  		<option value="AB-">AB-</option>
+  		<option value="O+">O+</option>
+  		<option value="O-">O-</option>
+  		<option value="Don't know">Don't Know</option>
+  	</select>
+  </div>
+ </div>
+
+
+
+ <div class="form-group">
+  <label class="control-label col-sm-2" for="pwd">Weight:</label>
+  <div class="col-sm-6">
+  	<input type="text" class="form-control" id ="weight" name="weight" placehloder="Enter weight" required>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+		<label class="control-label col-sm-2" for="pwd">Gender:</label>
+		<div class="col-sm-6">
+		<label class="radio-inline"><input type="radio" name="gender" value="Male">Male</label>
+ 		<label class="radio-inline"><input type="radio" name="gender" value="Female">Female</label>
+ 		<label class="radio-inline"><input type="radio" name="gender" value="Others">Others</label>
+ 		</div>
+</div>
+
+
+<div class="form-group">
+  		<label class="control-label col-sm-2" for="pwd">dob:</label>
+  		<div class="col-sm-6">
+  		<input type="date" class="form-control" id ="dob" name="dob" placehloder="Enter dob" required>
+  		</div>
+</div>
+
+
+<div class="form-group">
+  		<label class="control-label col-sm-2" for="Address">Address:</label>
+  		<div class="col-sm-6">
+  		<input type="text" class="form-control" id ="address" name="address" placehloder="Enter Address" required>
+  		</div>
+</div>
+
+
+<div class="form-group">
+  		<label class="control-label col-sm-2" for="adharno">Adharno:</label>
+  		<div class="col-sm-6">
+  		<input type="text" class="form-control" id ="adharno" name="adharno" placehloder="Enter Adharno" required>
+  		</div>
+</div>
+
+<div class="form-group">
+  		<div class="col-sm-offset-2 col-sm-10 ">
+  		<button type="submit" class="btn btn-default">Submit</button>
+		</div>
+</div>
+</form>
+
+{% endblock %}
+  </body>
+</html>
