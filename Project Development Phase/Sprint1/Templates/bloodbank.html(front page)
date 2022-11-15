@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image:url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.nicepng.com%2Fpng%2Fdetail%2F364-3647802_blood-symbol-png-blood-donation-app-logo.png&imgrefurl=https%3A%2F%2Fwww.nicepng.com%2Fourpic%2Fu2e6w7t4w7i1u2r5_blood-symbol-png-blood-donation-app-logo%2F&tbnid=25sGNMKwbS1zMM&vet=12ahUKEwiu1pf05aj7AhUsKbcAHfSBDy8QMygHegUIARDlAQ..i&docid=n9y7wbdMGguIWM&w=820&h=641&q=blood%20donation%20logo&hl=en&ved=2ahUKEwiu1pf05aj7AhUsKbcAHfSBDy8QMygHegUIARDlAQ');
+   background-repeat:no-repeat;
+  background-position: center;
+
+     background-size: contain;
+
+}
+
+.topnav {
+  overflow: hidden;
+  background-color:blue;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: skyblue;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: purple;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="/">Plasma Bank</a>
+  <a href="/home">Home</a>
+  <a href="/register">About Us</a>
+  <a href="/eligible">Eligibility</a>
+   <a href="/compat">Compatibility</a>
+  <a href="/facts">blood facts</a>
+</div>
+
+<h1 style="text-align:center;">Plasma Donor Application</h1>
+<br>
+
+<center><img src="data:image/jpeg;base64,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" width="500" height="400"></center>
+
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "0fadad16-9e92-49e6-9693-e6de04e40ca1", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "4fd73f2a-8793-4211-ab2c-1cc826e989e7", // The ID of your service instance.
+    onLoad: function(instance) { instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+</body>
+</html>
