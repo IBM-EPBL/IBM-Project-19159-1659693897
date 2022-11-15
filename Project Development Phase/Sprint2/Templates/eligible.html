@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Blood Facts | Blood Donors India</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style_donors.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+    <body>
+
+{% extends "layout1.html" %}
+
+{% block content %}
+
+        <script>
+    (function ($) {
+        $.fn.counter = function () {
+            const $this = $(this),
+                    numberFrom = parseInt($this.attr('data-from')),
+                    numberTo = parseInt($this.attr('data-to')),
+                    delta = numberTo - numberFrom,
+                    deltaPositive = delta > 0 ? 1 : 0,
+                    time = parseInt($this.attr('data-time')),
+                    changeTime = 10;
+
+            let currentNumber = numberFrom,
+                    value = delta * changeTime / time;
+            var interval1;
+            const changeNumber = () => {
+                currentNumber += value;
+                //checks if currentNumber reached numberTo
+                (deltaPositive && currentNumber >= numberTo) || (!deltaPositive && currentNumber <= numberTo) ? currentNumber = numberTo : currentNumber;
+                this.text(parseInt(currentNumber));
+                currentNumber == numberTo ? clearInterval(interval1) : currentNumber;
+            }
+
+            interval1 = setInterval(changeNumber, changeTime);
+        }
+    }(jQuery));
+
+    $(document).ready(function () {
+
+        $('.count-up').counter();
+
+        setTimeout(function () {
+            $('.count5').counter();
+        }, 3000);
+    });
+</script>
+
+<div class="row" style="background-color: #5a6a08;padding-top: 55px;">
+    <div class="col-md-4" style="text-align: center;color: #f6f6f6;padding-top:50px;">
+        <h3><div>A Drop of water makes ocean.</div>
+            <div>A Unit of Blood SAVES LIFE.</div></h3>
+    </div>
+    <div class="col-md-4" style="text-align: center;">
+        <img src="https://www.ichangemycity.com/theme/timthumb/timthumb.php?src=https://www.ichangemycity.com/theme/images/city-pulse/news/1593585860_Plasma.jpg&r=700" width="400" height="140">
+    </div>
+        <div class="col-md-4 center" style="padding: 5px;">
+        <div style="border-radius: 50%;background-color: rgb(86, 196, 79); height: 150px;width: 150px;margin-left: auto;margin-right: auto;">
+            <div class="count-up h1 text-center" data-from="10" data-to="9464" data-time="1000" style="padding-top: 45px;font-size:2rem;color:#6A1208;margin-top:20px;"></div>
+            <div style="color:#6A1208;">Active Donors</div>
+        </div>
+    </div>
+</div>        <div class="container" style="padding-bottom: 10px;">
+            <div class="col-md-12">
+                <div class="m_center"><h3>Blood Donors Eligibility Criteria</h3></div>
+        You should not be suffering from any of the following diseases or taking medicines for them
+        <br>
+        <div>*   Hepatitis B, C </div>
+        <br>
+        <div>*  AIDS #   Diabetes (are you under medication currently?) </div>
+        <br>
+        <div>*   Fits/ Convulsions (are you under medication currently?) </div>
+        <br>
+        <div>*   Cancer #   Leprosy or any other infectious diseases </div>
+        <br>
+        <div>*   Any allergies (Only if you are suffering from severe symptoms) </div>
+        <br>
+        <div>*   Hemophilia/ Bleeding problems </div>
+        <br>
+        <div>*   Kidney disease </div>
+        <br>
+        <div> *   Heart disease </div>
+        <br>
+        <div> *   Hormonal disorders</div>
+        <br>
+        <div> *   Any other type of Jaundice (within 5 years) </div>
+        <br>
+        <div>*   Tuberculosis (within 2 years) </div>
+        <br>
+        <div>*   Chicken Pox (within 1 year) </div>
+        <br>
+        <div>*   Malaria (within 1 year) </div>
+        <br>
+        <div>*   Organ Transplant (within one year) </div>
+        <br>
+        <div>*   Blood Transfusion (within the last 6 months) </div>
+        <br>
+        <div>*   Pregnancy (within the last 6 months)</div>
+        <br>
+        <div>*   Blood Donation (within the last 3 months) </div>
+        <br>
+        <div>*   Major Surgery (within the last 3 months)</div>
+        <br>
+        <div>*   Small Pox Vaccination (within the last 3weeks) </div>
+        <br>
+        <div>*   Hemoglobin deficiency / Anemia (recently) </div>
+        <br>
+        <div>*   Drastic weight loss (recently)</div>
+        <br>
+    </div>
+
+            </div>
+        </div>
+        <footer class="container-fluid text-center">
+            <div class ="col-md-12" style="background-color:#333; padding: 25px;color: #f6f6f6; line-height: 1.5;font-size: .8rem;">
+    <div class="col-md-6" style="padding-top:20px;">
+        <a href="tips.php">Tips</a> | <a href="refer.php">Refer a Friend</a> |  <a href="privacy_policy.php"> Privacy Policy</a>
+    </div>
+    <div class="col-md-6">
+        <div>
+            <a href="https://facebook.com/BloodDonorsIndia" class="fa fa-facebook socialmedia" style="font-size:2rem;" target="_blank"></a>  <a href="https://twitter.com/Blood_Donors_in/" class="fa fa-twitter socialmedia" style="font-size:2rem;" target="_blank"></a>
+        </div>
+    </div>
+</div>
+<div class ="col-md-12 center" style="font-size: 0.7rem; background-color:#000; padding: 15px;color: #f6f6f6">© 2022 Copyright <a href="https://vindia.net" target="_blank">REC</a></div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-7225913-3");
+        pageTracker._trackPageview();
+    } catch (err) {
+    }</script>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+        </footer>
+    {% endblock %}
+    </body>
+</html>
