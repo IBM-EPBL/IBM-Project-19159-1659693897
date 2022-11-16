@@ -62,9 +62,7 @@
                 }
             </script>
             </head>
-            <h1>LOGIN</h1>
-            <body>
-
+            
 <div class="topnav">
   <a class="active" href="/">Plasma Bank</a>
   <a href="/home">Home</a>
@@ -73,6 +71,9 @@
    <a href="/compat">Compatibility</a>
   <a href="/facts">blood facts</a>
 </div>
+            <h1>LOGIN</h1>
+            <body>
+
 <div class="new">
           <form name="valform" action="/loginurl" method="POST" onsubmit="return validateForm()">
             Username:
