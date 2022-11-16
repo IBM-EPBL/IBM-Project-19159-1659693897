@@ -12,8 +12,13 @@ conn = ibm_db.connect("DATABASE=bludb;HOSTNAME=98538591-7217-4024-b027-8baa776ff
 import csv
 run_with_ngrok(app)
 app.secret_key = "your secret key"
-@app.route("/login", methods=['GET', 'POST'])
+
+@app.route("/")
+def bloodbank():
+    return render_template("bloodbank.html")
+
 #adminlogin
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == "POST":
         Username = request.form['Username']
@@ -33,6 +38,7 @@ def login():
         else:
             flash("Incorrect Username or Password")
     return render_template("login.html")
+
  #donor registration
 @app.route("/register", methods=['GET', 'POST'])
 def register():
