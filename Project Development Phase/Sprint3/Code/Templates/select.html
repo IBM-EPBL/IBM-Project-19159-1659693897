@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image:url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.nicepng.com%2Fpng%2Fdetail%2F364-3647802_blood-symbol-png-blood-donation-app-logo.png&imgrefurl=https%3A%2F%2Fwww.nicepng.com%2Fourpic%2Fu2e6w7t4w7i1u2r5_blood-symbol-png-blood-donation-app-logo%2F&tbnid=25sGNMKwbS1zMM&vet=12ahUKEwiu1pf05aj7AhUsKbcAHfSBDy8QMygHegUIARDlAQ..i&docid=n9y7wbdMGguIWM&w=820&h=641&q=blood%20donation%20logo&hl=en&ved=2ahUKEwiu1pf05aj7AhUsKbcAHfSBDy8QMygHegUIARDlAQ');
+   background-repeat:no-repeat;
+  background-position: center;
+
+     background-size: contain;
+
+}
+
+.topnav {
+  overflow: hidden;
+  background-color:blue;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: skyblue;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: purple;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+
+
+{% extends "layout1.html" %}
+
+
+{% block content %}
+
+
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+
+	<script type="text/javascript">
+		var m={{ messages|safe }};
+		for(var i=0;i<m.length;i++)
+		{
+			alert(m[i]);
+		}
+	</script>
+
+	{% endif %}
+{% endwith %}
+
+<div class="topnav">
+  <a class="active" href="/">Plasma Bank</a>
+  <a href="/home">Home</a>
+  <a href="/aboutus">About Us</a>
+  <a href="/eligible">Eligibility</a>
+   <a href="/register">Compatibility</a>
+  <a href="/eligibility">blood facts</a>
+</div>
+<form class="form-horizontal" action="{{url_for('viewselected')}}" method="POST">
+	<tab></tab>
+<select id="blood_group" name="blood_group">
+		<option value="" disabled>select</option>
+		<option value="O+">O+</option>
+		<option value="A+">A+</option>
+		<option value="O-">O-</option>
+		<option value="A-">A-</option>
+		<option value="AB+">AB+</option>
+		<option value="B+">B+</option>
+		<option value="AB-">AB-</option>
+		<option value="B-">B-</option>
+
+
+	</select>
+
+	<input type="submit" name="submit">
+	<p></p>
+</form>
+<script type="text/javascript">
+	$('#blood_group').change(function()){
+		$.ajax({
+			data:{
+				blood_group:$('#blood_group').val()
+			},
+			type:'POST'
+			url:'/viewselected'
+		})
+		.done(function(data){
+			alert(data.blood_group)
+		});
+
+</script>
+
+    <td>
+        <form action="{{url_for('viewall')}}" method="POST">
+        <button value="" name="viewall">View all</button>
+        </form>
+    </td>
+
+<center><img src="http://www.gkh.co.in/files/abstract-images/blood_bank_581151803.jpg" width="400" height="400"></center>
+
+{% endblock %}
