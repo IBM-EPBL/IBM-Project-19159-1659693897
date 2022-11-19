@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   <title>
+        Plasma Bank
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="/favicon.ico" type="image/x-icon" rel="icon" /><link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <link rel="stylesheet" type="text/css" href="/css/../assets/vendor/animate.css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/../assets/vendor/aos/aos.css" />
+    <link rel="stylesheet" type="text/css" href="/css/../assets/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/../assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" type="text/css" href="/css/../assets/vendor/boxicons/css/boxicons.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/../assets/vendor/glightbox/css/glightbox.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/../assets/vendor/remixicon/remixicon.css" />
+    <link rel="stylesheet" type="text/css" href="/css/../assets/vendor/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/../assets/vendor/aos/aos.js"></script>
+    <script type="text/javascript" src="/js/../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script type="text/javascript" src="/js/../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="/js/../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script type="text/javascript" src="/js/tableHeadFixer.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <style type="text/css">
+        .inner-wrap {
+            /*background-color: #000000;*/
+            border-radius: 7px;
+            font-size: 0.75rem;
+            color: #c7c7c7;
+            padding: 0.4rem 0.4rem;
+            margin-left: .5rem;
+            display: inline-flex;
+            flex-wrap: wrap;
+        }
+        #topbar .cta a {
+          padding: 6px;
+          background-color: unset;
+        }
+
+    </style>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+                $(document).on('keypress','.alpha',function (event){
+                    var regex = new RegExp("^[a-zA-z ]+$");
+                    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                    if(event.which == 8 || event.keyCode == 9 || event.keyCode == 46 || event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40){
+                        return true;
+                    }
+                    if (!regex.test(key)) {
+                       event.preventDefault();
+                       return false;
+                    }
+                });
+                $(document).on('keypress','.alphanumeric',function (event){
+                    var regex = new RegExp("^[a-zA-z0-9 ]+$");
+                    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                    if(event.which == 8 || event.keyCode == 9 || event.keyCode == 46 || event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40){
+                        return true;
+                    }
+                    if (!regex.test(key)) {
+                       event.preventDefault();
+                       return false;
+                    }
+                });
+                $(document).on('keypress','.numeric',function (event){
+                    var regex = new RegExp("^[0-9.]+$");
+                    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                    if(event.which == 8 || event.keyCode == 9 || event.keyCode == 46 || event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40){
+                        return true;
+                    }
+                    if(event.which == 46 && $(this).val().indexOf('.') != -1) {
+                        event.preventDefault();
+                        return false;
+                    }
+                    if (!regex.test(key)) {
+                       event.preventDefault();
+                       return false;
+                    }
+                });
+                $(document).on('keypress','.mobile',function (event){
+                    var regex = new RegExp("^[0-9]+$");
+                    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                    if(event.which == 8 || event.keyCode == 9 || event.keyCode == 46 || event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40){
+                        return true;
+                    }
+                    if (!regex.test(key)) {
+                       event.preventDefault();
+                       return false;
+                    }
+                });
+                $(document).on('keypress','.phone',function (event){
+                    var regex = new RegExp("^[0-9-]+$");
+                    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                    if(event.which == 8 || event.keyCode == 9 || event.keyCode == 46 || event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40){
+                        return true;
+                    }
+                    if(event.which == 45 && $(this).val().indexOf('-') != -1) {
+                        event.preventDefault();
+                        return false;
+                    }
+                    if (!regex.test(key)) {
+                       event.preventDefault();
+                       return false;
+                    }
+                });
+            });
+
+        function changemysize(myvalue){
+            var div = document.body;
+            div.style.fontSize = myvalue + "px";
+            document.cookie="mysize=" + myvalue;
+        }
+
+        function MM_jumpMenu(targ,selObj,restore){ //v3.0
+          eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+          if (restore) selObj.selectedIndex=0;
+        }
+
+        function addBookmark(url,title) {
+            if (window.sidebar) {
+                window.sidebar.addPanel(title, url,"");
+            } else if( document.all ) {
+                window.external.AddFavorite( url, title);
+            } else if( window.opera && window.print ) {
+                return true;
+            } else if( document.layers ) {
+                window.alert( 'Please click OK and then press Ctrl+D to create a bookmark or \n click Bookmarks | Add Bookmark' );
+            } else {
+                window.alert( 'Please use your browser\'s bookmarking facility to create a bookmark' );
+            }
+        }
+    </script>
+</head>
+<body>
+        <style type="text/css">
+.topnav {
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 4px 9px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.topnav a:hover {
+  background-color: hsl(0, 73%, 37%);
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: rgb(9, 185, 83);
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+body{
+background-color:pink;
+}
+</style>
+  <div id="topbar" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <img src="https://www.ichangemycity.com/theme/timthumb/timthumb.php?src=https://www.ichangemycity.com/theme/images/city-pulse/news/1593585860_Plasma.jpg&r=700" align="center" style="width: 20%;">
+      </div>
+      <div class="text-right d-none d-md-block">
+        <div class="inner-wrap">
+          <div class="topnav" id="myTopnav">
+            <a href="/websites/frontNewPage"><img src="/img/homeIcon.png" align="absmiddle" alt="" /></a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="pull-left" style="background-color: #f2f2f2;">
+
+        <a href="/" class="logo"><img src="/img/logo.jpg" style="max-height: 70px;" alt="" class="img-fluid"></a>
+      </div>
+
+
+      <nav id="navbar" class="navbar">
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header> <div id="wrapper-container">
+        <div id="container">
+            <main id="main" style="padding-top: 100px;">
+                <section id="breadcrumbs" class="breadcrumbs">
+<div class="container">
+
+
+  <h2>About Us</h2>
+
+</div>
+</section>
+<section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-12">
+                <p>Plasma is the liquid part of the blood. It contains proteins and antibodies that are crucial for clotting and immunity. Around 55% of the blood is plasma.
+
+                    Plasma donation involves drawing blood, extracting the plasma, and returning what is left of the blood to the person, all through a single needle that remains in the arm throughout the process.  </p>
+                  <p>Such great challenge has been considerably alleviated with the development of information and computer technology. e-Blood Bank is an integrated blood bank automation system. This web based mechanism inter connects all the Blood Banks of the State into a single network. Integrated Blood Bank MIS refers the acquisition, validation, storage and circulation of various live data and information electronically regarding blood donation and transfusion service. Such system is able to assemble heterogeneous data into legible reports to support decision making from effective donor screening to optimal blood dissemination in the field. Those electronic processes will help the public for easy access to the blood availability status of blood banks on finger tips; so that he can place a requisition of a particular blood group in nearby blood bank (Especially rare groups) save a valuable life.</p>
+                  <p>It also provides online status of plasma availability of blood units in all the licensed plasma banks in the state. It includes online tracking and trailing system of the plasma (components of blood) by the state level administrators. The system manages all the activities from blood collection both from camps &amp; hospitals till the issue of blood units. It includes donor screening, blood collection, mandatory testing, storage and issue of the unit (whole human blood IP, different Blood component and aphaeresis blood products).</p>
+            </div>
+        </div>
+    </div>
+</section>          </main>
+        </div>
+    </div>
+<footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-links">
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              RAJALAKSHMI ENGINEERING COLLEGE<br>
+                Thandalam, Chennai <br>
+              <strong>Phone:</strong>+91-44-67181111<br>
+            </p></div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/OdishaSbtc" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/odishabloodsafety" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        Copyright &copy; 2022 <strong><span>RAJALAKSHMI ENGINEERING COLLEGE</span></strong>. All Rights Reserved.
+      </div>
+    </div>
+</footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>  <script src="/assets/js/main.js"></script>
+</body>
+</html>
