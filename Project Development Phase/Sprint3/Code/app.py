@@ -20,8 +20,7 @@ import os
 
 app = Flask(__name__)
 
-app.config['MAIL_USERNAME'] = 'priyamohan4102@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Priya@1234567890'
+
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
