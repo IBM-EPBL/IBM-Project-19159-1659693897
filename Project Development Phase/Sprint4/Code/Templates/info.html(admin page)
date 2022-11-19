@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image:url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.nicepng.com%2Fpng%2Fdetail%2F364-3647802_blood-symbol-png-blood-donation-app-logo.png&imgrefurl=https%3A%2F%2Fwww.nicepng.com%2Fourpic%2Fu2e6w7t4w7i1u2r5_blood-symbol-png-blood-donation-app-logo%2F&tbnid=25sGNMKwbS1zMM&vet=12ahUKEwiu1pf05aj7AhUsKbcAHfSBDy8QMygHegUIARDlAQ..i&docid=n9y7wbdMGguIWM&w=820&h=641&q=blood%20donation%20logo&hl=en&ved=2ahUKEwiu1pf05aj7AhUsKbcAHfSBDy8QMygHegUIARDlAQ');
+   background-repeat:no-repeat;
+  background-position: center;
+
+     background-size: contain;
+
+}
+
+.topnav {
+  overflow: hidden;
+  background-color:blue;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: skyblue;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: purple;
+  color: white;
+}
+
+.topnav1 {
+  overflow: hidden;
+  background-color:orange;
+}
+
+.topnav1 a {
+  float: left;
+  color: red;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav1 a:hover {
+  background-color: skyblue;
+  color: black;
+}
+
+.topnav1 a.active {
+  background-color: violet;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+{% extends "layout1.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+
+  <script type="text/javascript">
+    var m={{ messages|safe }};
+    for(var i=0;i<m.length;i++)
+    {
+      alert(m[i]);
+    }
+  </script>
+
+  {% endif %}
+{% endwith %}
+
+
+<div class="topnav">
+  <a class="active" href="{{ url_for('view') }}">View Donors</a>
+  <a href="{{ url_for('logout') }}">Logout</a>
+
+</div>
+
+<h1 style="text-align:center;">Plasma Donor Application</h1>
+<br>
+
+  <center><img src="https://i.pinimg.com/736x/26/a1/6c/26a16cbe6c24539d6fec034e43716d2e--blood-donation-in-india.jpg" width="460" height="345"></center>
+
+{% endblock %}
+</body>
+</html>
